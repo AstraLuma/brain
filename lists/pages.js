@@ -1,11 +1,9 @@
 function() {
   var row, ddoc = this,
     mustache = require("vendor/couchapp/lib/mustache"),
-    markdown = require("vendor/couchapp/lib/markdown"),
     data = {
       title : "All Pages",
-      site_title : this.couchapp.name,
-      path : "/pages/recent",
+      path : "/!recent",
       pages : []
     };
   provides("html", function() {
