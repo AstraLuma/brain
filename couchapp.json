@@ -1,4 +1,11 @@
 {
     "name": "Brain",
-    "description": "Personal wiki"
-}
+    "description": "Personal wiki",
+	"index" : "_rewrite/page/index",
+	"load" : {
+		"app" : [
+			"lib",
+			"vendor/couchapp/lib/mustache"
+		]
+	}
+ }

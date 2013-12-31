@@ -1,0 +1,58 @@
+
+[
+  {
+    "from" : "",
+    "to" : "_show/redirect"
+  },
+  {
+    "from" : "script/*",
+    "to" : "script/*"
+  },
+  {
+    "from" : "style/*",
+    "to" : "style/*"
+  },
+  {
+    "from" : "images/*",
+    "to" : "images/*"
+  },
+  {
+    "from" : "vendor/*",
+    "to" : "vendor/*"
+  },
+  {
+    "from" : "/page",
+    "to" : "_show/redirect"
+  },
+  {
+    "from" : "/page/*",
+    "to" : "_show/page/*"
+  },
+  {
+    "from" : "/pages/all",
+    "to" : "_list/pages/recent-changes",
+    "query" : {
+      "descending" : true
+    }
+  },
+  {
+    "from" : "/pages/recent",
+    "to" : "_list/pages/recent-changes",
+    "query" : {
+      "descending" : true,
+      "limit" : 20
+    }
+  },
+  {
+    "from" : "/pages/comments",
+    "to" : "_list/comments/all-comments",
+    "query" : {
+      "descending" : true,
+      "limit" : 20
+    }
+  },
+  {
+    "from" : "pages/*",
+    "to" : "../../*"
+  }
+]

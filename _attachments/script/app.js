@@ -1,5 +1,5 @@
 // Apache 2.0 J Chris Anderson 2011
-$(function() {   
+$(function() {
     // friendly helper http://tinyurl.com/6aow6yn
     $.fn.serializeObject = function() {
         var o = {};
@@ -43,24 +43,13 @@ $(function() {
             changeHandler.onChange(drawItems);
         }
     }
-    $.couchProfile.templates.profileReady = $("#new-message").html();
+//    $.couchProfile.templates.profileReady = $("#new-message").html();
     $("#account").couchLogin({
         loggedIn : function(r) {
-            $("#profile").couchProfile(r, {
-                profileReady : function(profile) {
-                    $("#create-message").submit(function(e){
-                        e.preventDefault();
-                        var form = this, doc = $(form).serializeObject();
-                        doc.created_at = new Date();
-                        doc.profile = profile;
-                        db.saveDoc(doc, {success : function() {form.reset();}});
-                        return false;
-                    }).find("input").focus();
-                }
-            });
+			$('#profile').hide();
         },
         loggedOut : function() {
-            $("#profile").html('<p>Please log in to see your profile.</p>');
+            $("#profile").html('<p>Please log in to see your profile.</p>').show();
         }
     });
  });
