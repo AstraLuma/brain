@@ -1,39 +1,24 @@
 {{>header}}
-    <div id="tools"></div>
-    <div id="wiki"><div class="wiki">{{{body}}}</div></div>
-    <div id="comments"></div>
-    {{#has_atts}}
-    <div id="files">
-      <p>Files attached to <em>{{title}}</em>:</p>
-      <ul>
-        {{#atts}}
-          <li><a href="{{uri}}">{{name}}</a> ({{type}})</li>
-        {{/atts}}
-      </ul>
+	<div class="container">
+		<div id="tools"></div>
+		<article>
+			<h1 id="title">{{{title}}}</h1>
+			<div id="body">{{{body}}}</div>
+		</article>
+		{{#has_atts}}
+		<div id="files">
+		  <p>Files attached to <em>{{title}}</em>:</p>
+		  <ul>
+			{{#atts}}
+			  <li><a href="{{uri}}">{{name}}</a> ({{type}})</li>
+			{{/atts}}
+		  </ul>
+		</div>
+		{{/has_atts}}
     </div>
-    {{/has_atts}}
   </body>
-  <script src="../script/myloader.js"></script>
+  <script src="/!script/myloader.js"></script>
   <script src="/_utils/script/base64.js"></script>
   <script src="/_utils/script/jquery.form.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    var opts = {};
-    if (document.location.pathname.indexOf("_design") == -1) {
-      // we are in a vhost
-      opts.db = "pages";
-      opts.design = "pages";
-    };
-    opts.ddoc = {{{ddoc}}};
-    $.couch.app(function(app) {
-      $("#account").evently("account", app);
-      $("#profile").evently("profile", app);
-      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-      $$("#wiki").docid = {{docid}};
-      $$("#wiki").title = {{title_json}};
-      $("#wiki").evently("wiki", app);
-      $("#comments").evently("comments", app);
-      $("#tools").evently("tools", app);
-      $.pathbinder.begin("{{begin}}");
-    }, opts);
-  </script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </html>

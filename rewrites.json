@@ -4,34 +4,30 @@
     "to" : "_show/redirect"
   },
   {
-    "from" : "script/*",
+    "from" : "!script/*",
     "to" : "script/*"
   },
   {
-    "from" : "style/*",
+    "from" : "!style/*",
     "to" : "style/*"
   },
   {
-    "from" : "images/*",
+    "from" : "!images/*",
     "to" : "images/*"
   },
   {
-    "from" : "vendor/*",
+    "from" : "!vendor/*",
     "to" : "vendor/*"
   },
   {
-    "from" : "/page",
-    "to" : "_show/redirect"
-  },
-  {
-    "from" : "_all",
+    "from" : "!all",
     "to" : "_list/pages/recent-changes",
     "query" : {
       "descending" : true
     }
   },
   {
-    "from" : "_recent",
+    "from" : "!recent",
     "to" : "_list/pages/recent-changes",
     "query" : {
       "descending" : true,
@@ -39,7 +35,7 @@
     }
   },
   {
-    "from" : "_api/*",
+    "from" : "!api/*",
     "to" : "../../*"
   },
   {

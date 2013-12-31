@@ -1,14 +1,11 @@
 {
     "name": "Brain",
     "description": "Personal wiki",
-	"index" : "_rewrite/page/index",
+	"index" : "_rewrite/brain/index",
 	"load" : {
 		"app" : [
 			"lib",
-			"evently",
-			"vendor/couchapp/evently",
 			"vendor/couchapp/lib/linkup",
-			"vendor/couchapp/lib/markdown",
 			"vendor/couchapp/lib/mustache",
 			"vendor/couchapp/lib/md5"
 		]
