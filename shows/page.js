@@ -3,14 +3,13 @@ function(doc, req) {
 	// which are created by calls to require will break JSON.stringify.
 	var name, stub, ddoc = this,
 		mustache = require("vendor/couchapp/lib/mustache"),
-		wiki = require("lib/wiki"),
 		data = {
 			ddoc : JSON.stringify(require("vendor/couchapp/lib/code").ddoc(ddoc), function(key, value) {
 				return (key == "parent") ? undefined : value;
 			}),
 			docid : JSON.stringify(req.id),
 			id : req.id,
-			path : "../page/"+req.id,
+			path : "/"+req.id,
 			site_title : this.couchapp.name
 		};
 	if (doc) {
