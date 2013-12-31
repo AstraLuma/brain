@@ -5,7 +5,12 @@
 	"load" : {
 		"app" : [
 			"lib",
-			"vendor/couchapp/lib/mustache"
+			"evently",
+			"vendor/couchapp/evently",
+			"vendor/couchapp/lib/linkup",
+			"vendor/couchapp/lib/markdown",
+			"vendor/couchapp/lib/mustache",
+			"vendor/couchapp/lib/md5"
 		]
 	}
- }
+}

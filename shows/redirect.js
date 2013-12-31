@@ -4,5 +4,5 @@ function(doc, req) {
   // except req.path reflects the post-rewrite state
   // return redirect.permanent([""].concat(req.path,"page","index").join("/"));
   // for now, cheat and do a relative Location header
-  return redirect.permanent("/index.html");
+  return redirect.permanent("index");
 }

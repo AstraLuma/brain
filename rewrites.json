@@ -1,4 +1,3 @@
-
 [
   {
     "from" : "",
@@ -25,18 +24,14 @@
     "to" : "_show/redirect"
   },
   {
-    "from" : "/page/*",
-    "to" : "_show/page/*"
-  },
-  {
-    "from" : "/pages/all",
+    "from" : "_all",
     "to" : "_list/pages/recent-changes",
     "query" : {
       "descending" : true
     }
   },
   {
-    "from" : "/pages/recent",
+    "from" : "_recent",
     "to" : "_list/pages/recent-changes",
     "query" : {
       "descending" : true,
@@ -44,15 +39,11 @@
     }
   },
   {
-    "from" : "/pages/comments",
-    "to" : "_list/comments/all-comments",
-    "query" : {
-      "descending" : true,
-      "limit" : 20
-    }
+    "from" : "_api/*",
+    "to" : "../../*"
   },
   {
-    "from" : "pages/*",
-    "to" : "../../*"
+    "from" : "*",
+    "to" : "_show/page/*"
   }
 ]
