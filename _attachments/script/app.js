@@ -36,16 +36,18 @@ $(function() {
 			var ops = {
 				plugins: {
 				  'halloformat': {},
+				  'halloheadings': {},
 				  'halloblock': {},
 				  'hallojustify': {},
 				  'hallolists': {},
+				  //'halloimage': {},
 				  'halloreundo': {}
 				}
 			};
 			var observer = new MutationObserver(save);
-			$('#title, #body').attr("contenteditable", true).each(function(i, ele) {
+			$('#title, #body').attr("contenteditable", true)/*.each(function(i, ele) {
 				observer.observe(ele, { attributes: true, childList: true, characterData: true });
-			}).blur(save).hallo(ops);
+			})*/.blur(save).bind('hallomodified', save).hallo(ops);
         },
         loggedOut : function() {
             $("#profile").html('<p>Please log in to see your profile.</p>').show();
@@ -69,7 +71,7 @@ $('#create-page').click(function() {
             doc = {
 				_id: data.slug,
 				title: data.slug,
-				body: "Page Content Here",
+				body: "<p>Page Content Here</p>",
 			};
 			$.ajax({
 				type: "PUT",
