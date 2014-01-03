@@ -1,5 +1,5 @@
 function(doc) {
   if (doc.title && doc.body) {
-    emit(doc._id, 1);
+    emit(doc._id, doc);
   }
 };

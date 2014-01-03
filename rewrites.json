@@ -21,18 +21,7 @@
   },
   {
     "from" : "!all",
-    "to" : "_list/pages/recent-changes",
-    "query" : {
-      "descending" : true
-    }
-  },
-  {
-    "from" : "!recent",
-    "to" : "_list/pages/recent-changes",
-    "query" : {
-      "descending" : true,
-      "limit" : 20
-    }
+    "to" : "_list/pages/all-pages"
   },
   {
     "from" : "!api/*",
