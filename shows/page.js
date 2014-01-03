@@ -15,6 +15,7 @@ function(doc, req) {
 	if (doc) {
 		data.title = doc.title;
 		data.body = doc.body;
+		data.rev = doc._rev;
 		data.atts = [];
 		if (doc._attachments) {
 			for (name in doc._attachments) {
