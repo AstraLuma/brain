@@ -57,9 +57,15 @@ $('#create-page').click(function() {
 	$.showDialog('/!script/newpage.html', {
 		submit: function(data, callback) {
 			if (!data.slug || data.slug.length == 0) {
-              callback({slug: "Please enter a slug."});
-              return;
+				callback({slug: "Please enter a slug."});
+				return;
             }
+
+            if (!data.slug.match(/^[-_+0-9a-z]*$/)) {
+				callback({slug: "Slug may only contain 0-9 a-z _ + -."});
+				return;
+            }
+
             doc = {
 				_id: data.slug,
 				title: data.slug,
